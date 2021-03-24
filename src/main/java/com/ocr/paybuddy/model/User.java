@@ -16,6 +16,29 @@ public class User {
 	private List<Transaction> transactions;
 	private List<User> connections;
 
+	public User() {
+		super();
+	}
+
+	public User(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public User(String firstName, String lastName, String mail, String socialMediaString, @NotBlank double balance,
+			String iban, List<Transaction> transactions, List<User> connections) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mail = mail;
+		this.socialMediaString = socialMediaString;
+		this.balance = balance;
+		this.iban = iban;
+		this.transactions = transactions;
+		this.connections = connections;
+	}
+
 	public int getId() {
 		return id;
 	}
