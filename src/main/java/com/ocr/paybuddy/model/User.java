@@ -1,5 +1,6 @@
 package com.ocr.paybuddy.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.NotBlank;
@@ -26,17 +27,18 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public User(String firstName, String lastName, String mail, String socialMediaString, @NotBlank double balance,
-			String iban, List<Transaction> transactions, List<User> connections) {
+	public User(int id, String firstName, String lastName, String mail, String socialMediaString,
+			@NotBlank double balance, String iban) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
 		this.socialMediaString = socialMediaString;
 		this.balance = balance;
 		this.iban = iban;
-		this.transactions = transactions;
-		this.connections = connections;
+		this.transactions = new ArrayList<>();
+		this.connections = new ArrayList<>();
 	}
 
 	public int getId() {

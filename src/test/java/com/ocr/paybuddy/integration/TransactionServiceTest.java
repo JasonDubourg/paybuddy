@@ -1,4 +1,4 @@
-package com.ocr.paybuddy.UT_Services;
+package com.ocr.paybuddy.integration;
 
 public class TransactionServiceTest {
 

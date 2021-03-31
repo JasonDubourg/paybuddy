@@ -1,4 +1,4 @@
-package com.ocr.paybuddy.UT_Controllers;
+package com.ocr.paybuddy.ut.controllers;
 
 public class TransactionControllerTest {
 
