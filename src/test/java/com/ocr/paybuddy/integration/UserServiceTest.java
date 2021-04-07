@@ -39,9 +39,9 @@ public class UserServiceTest {
 		listConnectionsTest.add(userTest1);
 		listConnectionsTest.add(userTest2);
 		// WHEN
-		Mockito.when(userDaoImplMock.getConnectionsFromUserList(userID)).thenReturn(listConnectionsTest);
+		Mockito.when(userDaoImplMock.getConnections(userID)).thenReturn(listConnectionsTest);
 		// THEN
-		Mockito.verify(userDaoImplMock, Mockito.times(1)).getConnectionsFromUserList(userID);
+		Mockito.verify(userDaoImplMock, Mockito.times(1)).getConnections(userID);
 		Assertions.assertEquals(2, listConnectionsTest.size());
 	}
 }

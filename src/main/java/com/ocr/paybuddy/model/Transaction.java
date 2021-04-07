@@ -8,13 +8,24 @@ public class Transaction {
 	@NotBlank
 	private String description;
 	@NotBlank
-	private int amout;
+	private double amout;
 	@NotBlank
 	private double fare;
 	@NotNull
-	private User sender;
+	private String sender;
 	@NotNull
-	private User receiver;
+	private String receiver;
+
+	public Transaction(int id, @NotBlank String description, @NotBlank double amout, @NotBlank double fare,
+			@NotNull String sender, @NotNull String receiver) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.amout = amout;
+		this.fare = fare;
+		this.sender = sender;
+		this.receiver = receiver;
+	}
 
 	public int getId() {
 		return id;
@@ -32,7 +43,7 @@ public class Transaction {
 		this.description = description;
 	}
 
-	public int getAmout() {
+	public double getAmout() {
 		return amout;
 	}
 
@@ -48,19 +59,19 @@ public class Transaction {
 		this.fare = fare;
 	}
 
-	public User getSender() {
+	public String getSender() {
 		return sender;
 	}
 
-	public void setSender(User sender) {
+	public void setSender(String sender) {
 		this.sender = sender;
 	}
 
-	public User getReceiver() {
+	public String getReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(User receiver) {
+	public void setReceiver(String receiver) {
 		this.receiver = receiver;
 	}
 }

@@ -15,9 +15,21 @@ public class UserDaoImpl implements IUserDao {
 	JdbcTemplate JdbcTemplate;
 
 	@Override
-	public List<User> getConnectionsFromUserList(int userID) {
+	public List<User> getConnections(int userID) {
 		String query = "SELECT * FROM user INNER JOIN connection ON user.id = connection.buddy_id WHERE owner_id =?";
 		return JdbcTemplate.query(query, new UserRowMapper(), userID);
+	}
+
+	@Override
+	public User getUserInfos(int id) {
+		String query = "SELECT * FROM user where user.id =?";
+		return JdbcTemplate.queryForObject(query, new UserRowMapper(), id);
+	}
+
+	@Override
+	public User findUserByMail(String email) {
+		String query = "SELECT * FROM user WHERE user.mail = ?";
+		return JdbcTemplate.queryForObject(query, new UserRowMapper(), email);
 	}
 
 }

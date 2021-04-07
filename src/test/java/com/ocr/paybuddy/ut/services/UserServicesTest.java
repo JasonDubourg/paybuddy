@@ -34,7 +34,7 @@ public class UserServicesTest {
 		// GIVEN
 		int id = 1;
 		// WHEN
-		when(userService.getConnectionsFromUserList(id)).thenReturn(listConnectionsTest);
+		when(userService.getConnections(id)).thenReturn(listConnectionsTest);
 		// THEN
 		Assertions.assertEquals(2, listConnectionsTest.size());
 	}

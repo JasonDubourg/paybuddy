@@ -42,12 +42,12 @@ public class UserControllerTest {
 		listConnectionsTest.add(userTest2);
 		// When
 		// Simulation du comportement du service de requête get
-		Mockito.when(userService.getConnectionsFromUserList(1)).thenReturn(listConnectionsTest);
+		Mockito.when(userService.getConnections(1)).thenReturn(listConnectionsTest);
 		// Then
 		// Vérification du status de la réponse (200) de la requête
 		mockMvc.perform(get("/connections")).andExpect(status().isOk());
 		// Vérifie que le bon service a été appelé
-		Mockito.verify(userService, Mockito.times(1)).getConnectionsFromUserList(1);
+		Mockito.verify(userService, Mockito.times(1)).getConnections(1);
 		Assertions.assertEquals(2, listConnectionsTest.size());
 	}
 

@@ -14,5 +14,10 @@ public interface IUserDao {
 	public static final String COLUMN_BALANCE = "balance";
 	public static final String COLUMN_SOCIALE_MEDIA = "social_media";
 
-	public List<User> getConnectionsFromUserList(int userID);
+	public User findUserByMail(String email);
+
+	public List<User> getConnections(int userID);
+
+	public User getUserInfos(int idSender);
+
 }
