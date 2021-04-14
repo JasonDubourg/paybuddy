@@ -1,0 +1,184 @@
+#navbarRight {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#colorText {
+    color: rgb(209, 27, 27);
+}
+
+#btn-menu {
+    background-color: #5CB95C;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.nav-link {
+    font-size: 1.4em;
+    text-decoration: double;
+}
+
+a {
+    text-decoration: none;
+}
+
+.breadcrumb {
+    font-size: 1.2em;
+}
+
+#ariane {
+    margin: 10px 0px;
+}
+
+#ariane-background {
+    background-color: lightslategrey;
+}
+
+.pad1 {
+    padding-top: 30px;
+}
+
+.pad2{
+    padding: 90px ;
+}
+
+#btn-add-connection {
+    border: none;
+    font-size: 1.1em;
+    color: white;
+    background-color: rgba(44, 88, 231, 0.801);
+    padding: 4px 40px;
+    border-radius: 8px;
+}
+
+.flex-end-item {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-center-item1 {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-sapce-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+#box-form{
+	height : 50px;
+}
+
+#btn-pay {
+    border: none;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+    background-color: #5CB95C;
+    padding: 4px 80px;
+    border-radius: 8px;
+}
+
+input, .form-select {
+    border: 3px solid black;
+    height: 100%;
+    width: 250px;
+    text-align: center;
+}
+
+#table-header {
+    color: white;
+    background-color: #5CB95C;
+}
+
+table {
+    font-size: 1.2em;
+    border: 3px solid black;
+    text-align: center;
+    padding: 2rem 2rem;
+}
+
+th {
+    padding: 2rem 2rem;
+}
+
+td {
+    padding: 2rem 2rem;
+}
+
+#nav-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+#card-connexion {
+    border: 2px solid black;
+    margin-top: 100px;
+    padding:40px;
+    border-radius: 8px;
+}
+
+#logo-login {
+    background-color: #5CB95C;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.form-group {
+    margin-top: 40px;
+}
+
+#btn-login {
+    height: 100%;
+    border: none;
+    font-size: 1.1em;
+    color: white;
+    background-color: rgba(44, 88, 231, 0.801);
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.form-check {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#btn-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 5px 30px;
+}
+
+#submit-btn {
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+#exampleCheck1 {
+    margin-right: 10px;
+}
+
+#exampleInputEmail1 {
+    text-align: left;
+}
+
+#exampleInputPassword1 {
+    text-align: left;
+}

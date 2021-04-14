@@ -1,33 +1,28 @@
 package com.ocr.paybuddy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.ocr.paybuddy.dto.ListUserTransactionsDto;
+import com.ocr.paybuddy.dto.CurrentUserDto;
+import com.ocr.paybuddy.dto.SendMoneyDto;
 import com.ocr.paybuddy.service.TransactionService;
 
-@RestController
+@Controller
 public class TransactionController {
 
 	@Autowired
 	TransactionService transactionService;
 
-	@GetMapping(value = "/transactions")
-	@ResponseStatus(HttpStatus.OK)
-	public ListUserTransactionsDto getUserTransactions(int id) {
-		return transactionService.getUserTransactions(id);
-	}
-
 	@PostMapping(value = "/sendmoney")
-	public void sendMoneyToBuddy(int idSender, int idReceiver, String description, double amount) {
-		try {
-			transactionService.sendMoney(idSender, idReceiver, description, amount);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public String sendMoneyToBuddy(@ModelAttribute SendMoneyDto sendMoneyDto) throws Exception {
+		CurrentUserDto currentUserDto = new CurrentUserDto(4);
+		if (transactionService.sendMoney(currentUserDto.getId(), sendMoneyDto.getIdReceiver(),
+				sendMoneyDto.getDescription(), sendMoneyDto.getAmount())) {
+			return "redirect:/";
+		} else {
+			return "redirect:/";
 		}
 	}
 }

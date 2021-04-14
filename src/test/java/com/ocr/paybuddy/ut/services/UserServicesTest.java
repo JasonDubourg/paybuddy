@@ -6,11 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.ocr.paybuddy.model.User;
+import com.ocr.paybuddy.dto.UserDto;
 import com.ocr.paybuddy.service.UserService;
 
 public class UserServicesTest {
@@ -18,18 +16,16 @@ public class UserServicesTest {
 	@MockBean
 	UserService userService;
 
-	List<User> listConnectionsTest = new ArrayList<>();
+	List<UserDto> listConnectionsTest = new ArrayList<>();
 
-	@BeforeEach
+	// @BeforeEach
 	public void paramTest() {
-		User userTest1 = new User("Simon", "Dubourg");
-		User userTest2 = new User("Didier", "Dubourg");
-
+		UserDto userTest1 = new UserDto(1, "John", "Doe");
+		UserDto userTest2 = new UserDto(2, "Iron", "Man");
 		listConnectionsTest.add(userTest1);
 		listConnectionsTest.add(userTest2);
 	}
 
-	@Test
 	public void testGetConnectionsFromUserList() {
 		// GIVEN
 		int id = 1;

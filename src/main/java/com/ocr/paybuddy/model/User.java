@@ -10,6 +10,7 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String mail;
+	private String password;
 	private String socialMediaString;
 	@NotBlank
 	private double balance;
@@ -27,13 +28,14 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public User(int id, String firstName, String lastName, String mail, String socialMediaString,
+	public User(int id, String firstName, String lastName, String mail, String password, String socialMediaString,
 			@NotBlank double balance, String iban) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
+		this.password = password;
 		this.socialMediaString = socialMediaString;
 		this.balance = balance;
 		this.iban = iban;
@@ -71,6 +73,14 @@ public class User {
 
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getSocialMediaString() {
