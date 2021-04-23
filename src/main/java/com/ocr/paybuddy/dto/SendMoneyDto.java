@@ -1,19 +1,29 @@
 package com.ocr.paybuddy.dto;
 
 public class SendMoneyDto {
+	private int idSender;
 	private int idReceiver;
 	private double amount;
 	private String description;
+
+	public int getIdSender() {
+		return idSender;
+	}
 
 	public SendMoneyDto() {
 		super();
 	}
 
-	public SendMoneyDto(int idReceiver, double amount, String description) {
+	public SendMoneyDto(int idSender, int idReceiver, double amount, String description) {
 		super();
+		this.idSender = idSender;
 		this.idReceiver = idReceiver;
 		this.amount = amount;
 		this.description = description;
+	}
+
+	public void setIdSender(int idSender) {
+		this.idSender = idSender;
 	}
 
 	public int getIdReceiver() {
@@ -39,4 +49,5 @@ public class SendMoneyDto {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 }

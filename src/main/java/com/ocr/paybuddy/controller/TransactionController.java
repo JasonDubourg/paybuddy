@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.ocr.paybuddy.dto.CurrentUserDto;
 import com.ocr.paybuddy.dto.SendMoneyDto;
 import com.ocr.paybuddy.service.TransactionService;
 
@@ -16,13 +15,12 @@ public class TransactionController {
 	TransactionService transactionService;
 
 	@PostMapping(value = "/sendmoney")
-	public String sendMoneyToBuddy(@ModelAttribute SendMoneyDto sendMoneyDto) throws Exception {
-		CurrentUserDto currentUserDto = new CurrentUserDto(4);
-		if (transactionService.sendMoney(currentUserDto.getId(), sendMoneyDto.getIdReceiver(),
+	public String sendMoneyToBuddy(@ModelAttribute("sendMoneyDto") SendMoneyDto sendMoneyDto) throws Exception {
+		if (transactionService.sendMoney(sendMoneyDto.getIdSender(), sendMoneyDto.getIdReceiver(),
 				sendMoneyDto.getDescription(), sendMoneyDto.getAmount())) {
-			return "redirect:/";
+			return "transfer";
 		} else {
-			return "redirect:/";
+			return "/";
 		}
 	}
 }

@@ -46,26 +46,12 @@
                 <div class="col-md-4">
                     <div class="flex-center-item" id="card-connexion">
                         <div class="flex-center-item1">
-                            <a id="logo-login">Add a new Buddy</a>
                         </div>
-                        <div>
-                            <form method="post" th:action="@{/addconnection}" th:object="${connectionDto}">
-								<div style="display:none;">
-									<select th:field="*{owner}" id="champsCaché">
-										<option  th:value="${currentUserMail.mail}" >
-									</select>
-								</div>
-                                <div class="form-group">
-                                  <label for="exampleInputEmail1"></label>
-                                  <input type="email" th:field="*{mail}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                                </div>
-                                <div id="btn-submit">
-                                    <button type="submit" id="submit-btn" class="btn btn-primary">Add</button>
-                                </div>
-                            </form>
+                        <div id="success-div">
+                            	<p id="success-title">Success</p>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-outline-secondary"><a href=javascript:history.go(-1)>Back</a></button>
+                    <a th:href="@{/}">Transfer</a>
                 </div>
                 <div class="col-md-4">
                 </div>

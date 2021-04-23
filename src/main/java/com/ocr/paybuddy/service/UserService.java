@@ -25,6 +25,12 @@ public class UserService {
 	@Autowired
 	ConnectionDaoImpl connectionDaoImpl;
 
+	public int getCurrentUserID(String mail) {
+		User user = userDaoImpl.findUserByMail(mail);
+		int userID = user.getId();
+		return userID;
+	}
+
 	public List<UserDto> getConnections(int id) {
 		List<UserDto> listConnections = new ArrayList<>();
 		List<User> listUserConnections = userDaoImpl.getConnections(id);
@@ -47,7 +53,7 @@ public class UserService {
 			connectionDaoImpl.addConnection(userID, buddy_id);
 			addSuccess = true;
 		} else {
-			throw new Exception("This buddy is not register");
+			throw new Exception("This buddy is register");
 		}
 		return addSuccess;
 	}

@@ -182,3 +182,19 @@ td {
 #exampleInputPassword1 {
     text-align: left;
 }
+
+#hiddenField {
+	visibility: hidden;
+}
+
+#success-div {
+	display:flex;
+	align-items: center;
+	background-color: #5CB95C;
+}
+
+#success-title {
+	color: white;
+}
+
+
