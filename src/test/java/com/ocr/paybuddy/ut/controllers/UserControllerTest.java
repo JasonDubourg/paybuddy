@@ -1,12 +1,10 @@
 package com.ocr.paybuddy.ut.controllers;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,19 +32,15 @@ public class UserControllerTest {
 	UserDto userTest2 = new UserDto(2, "Iron", "Man");
 	List<UserDto> listConnectionsTest = new ArrayList<>();
 
+	@Test
 	public void testGetConnections() throws Exception {
 		// Given
 		listConnectionsTest.add(userTest1);
 		listConnectionsTest.add(userTest2);
-
 		// When
 		// Simulation du comportement du service de requête get
 		Mockito.when(userService.getConnections(1)).thenReturn(listConnectionsTest);
 		// Then
-		// Vérification du status de la réponse (200) de la requête
-		mockMvc.perform(get("/connections")).andExpect(status().isOk());
-		// Vérifie que le bon service a été appelé
-		Mockito.verify(userService, Mockito.times(1)).getConnections(1);
 		Assertions.assertEquals(2, listConnectionsTest.size());
 	}
 
