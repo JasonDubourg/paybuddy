@@ -50,28 +50,4 @@ public class UserControllerTest {
 		Assertions.assertEquals(2, listConnectionsTest.size());
 	}
 
-	public void testCreateConnection() throws Exception {
-		// GIven
-
-		// When
-
-		// Then
-	}
-
-	public void testFindUserByEmailConnections(String email) throws Exception {
-		// GIven
-
-		// When
-
-		// Then
-	}
-
-	public void testSendMoneyToBuddy() throws Exception {
-		// GIven
-
-		// When
-
-		// Then
-	}
-
 }

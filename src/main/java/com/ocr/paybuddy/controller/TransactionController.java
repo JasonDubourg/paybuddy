@@ -18,7 +18,7 @@ public class TransactionController {
 	public String sendMoneyToBuddy(@ModelAttribute("sendMoneyDto") SendMoneyDto sendMoneyDto) throws Exception {
 		if (transactionService.sendMoney(sendMoneyDto.getIdSender(), sendMoneyDto.getIdReceiver(),
 				sendMoneyDto.getDescription(), sendMoneyDto.getAmount())) {
-			return "transfer";
+			return "success";
 		} else {
 			return "/";
 		}
