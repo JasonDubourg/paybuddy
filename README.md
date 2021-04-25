@@ -38,6 +38,6 @@ Application de transfert d'argent à des amis.
 - nikola@gmail.com
 - john@gmail.com
 
-7. Une fois un amis ajouté, pour revenir au début de l'application, cliquez sur le logo de l'application dans la barre de navigation.
+7. Une fois un ami ajouté, pour revenir au début de l'application, cliquez sur le logo de l'application dans la barre de navigation.
 
 8. Vous pouvez ensuite sélectionner un ami pour envoyer de l'argent.
